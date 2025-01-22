@@ -9,6 +9,8 @@ import java.util.Scanner;
  * and then asks the user to pick a card and searches the array of cards
  * for the match to the user's card. To be used as starting code in ICE 1
  * @author srinivsi
+ * Athul Bijumon Kolothu
+ * 991724395
  */
 public class CardTrick {
     
@@ -27,32 +29,44 @@ public class CardTrick {
             System.out.println(c.getValue() + " of " + c.getSuit());
         }
         
-        Scanner sc = new Scanner(System.in);
+        //Scanner sc = new Scanner(System.in);
         
-        System.out.print("Enter a Value from 1-13 :");
-        int V1 = sc.nextInt();
-        System.out.print("Enter a Suit (0-3 where 0=Hearts,1=Diamond,2=Spades,3=Clubs): ");
-        int suitIndex = sc.nextInt();
-        String S1 = Card.SUITS[suitIndex]; 
+        // System.out.print("Enter a Value from 1-13 :");
+        // int V1 = sc.nextInt();
+        // System.out.print("Enter a Suit (0-3 where 0=Hearts,1=Diamond,2=Spades,3=Clubs): ");
+        // int suitIndex = sc.nextInt();
+        // String S1 = Card.SUITS[suitIndex]; 
         
-        Card c1 = new Card();
-        c1.setValue(V1);
-        c1.setSuit(S1);
+        // Card c1 = new Card();
+        // c1.setValue(V1);
+        // c1.setSuit(S1);
         
-        boolean usercard = false;
-        for (Card C : magicHand) {
-            if (C.getValue() == c1.getValue() && C.getSuit().equals(c1.getSuit())) {
+         boolean usercard = false;
+        // for (Card C : magicHand) {
+        //     if (C.getValue() == c1.getValue() && C.getSuit().equals(c1.getSuit())) {
+        //         usercard = true;
+        //         break;
+        //     }
+        // }
+
+        Card luckcard = new Card();
+        luckcard.setValue(2);
+        luckcard.setSuit("Clubs");
+        for (Card C : magicHand){
+                if (C.getValue() == luckcard.getValue() && C.getSuit().equals(luckcard.getSuit())){
                 usercard = true;
                 break;
-            }
+                }
         }
+        
          if (usercard==true){
              System.out.println("Your Assumption is Correct");
          }
          else{
              System.out.println("Sorry,Your Assumption is Incorrect");
          }
-        
+         
+    
         //insert code to ask the user for Card value and suit, create their card
         // and search magicHand here
         //Then report the result here
